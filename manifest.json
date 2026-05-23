@@ -1,0 +1,19 @@
+{
+  "id": "Movie Hub",
+  "name": "CineGêneros da Laura",
+  "short_name": "Laura",
+  "scope": "./",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#d01412",
+  "icons": [
+    {
+      "src": "profile.avif",
+      "sizes": "any",
+      "type": "image/avif"
+    }
+  ],
+  "app_name": "Laura",
+  "description": "Escolha seu gênero favorito 🎬"
+}

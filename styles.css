@@ -37,7 +37,7 @@ body::before {
 
 /* quando o filme começa */
 body.filme-comecou::before {
-  opacity: 0.5; /* ajuste aqui */
+  opacity: 0.85; /* ajuste aqui */
 }
 
 

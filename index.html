@@ -18,28 +18,25 @@
 
     <div class="links">
 
-      <a href="https://www.imdb.com/title/tt2911666/" target="_blank" class="btn btn-action">
-        Ação: De volta ao jogo
+      <a href="https://www.imdb.com/title/tt2911666/" target="_blank" class="acao">Ação: De volta ao jogo</a>
       </a>
 
-      <a href="https://www.imdb.com/title/tt1375670/" target="_blank" class="btn btn-comedy">
-        Comédia: Gente Grande
+      <a href="https://www.imdb.com/title/tt1375670/" target="_blank" class="comedia">Comédia: Gente Grande</a>
+      
       </a>
 
-      <a href="https://www.imdb.com/title/tt1457767/" target="_blank" class="btn btn-horror">
-        Terror: The Conjuring
+      <a href="https://www.imdb.com/title/tt1457767/" target="_blank" class="terror">Terror: The Conjuring</a>
+
       </a>
 
-      <a href="https://www.imdb.com/title/tt0120338/" target="_blank" class="btn btn-romance">
-        Romance: Titanic
+      <a href="https://www.imdb.com/title/tt0120338/" target="_blank"  class="romance">Romance: Titanic</a>
+
       </a>
 
-      <a href="https://www.imdb.com/title/tt0816692/" target="_blank" class="btn btn-scifi">
-        Ficção Científica: Interestelar
-      </a>
+      <a href="https://www.imdb.com/title/tt0816692/" target="_blank" class="ficcao">Ficção Científica: Interestelar</a>
+    </a>
 
-      <a href="https://www.imdb.com/title/tt0114709/" target="_blank" class="btn btn-animation">
-        Animação: Toy Story
+      <a href="https://www.imdb.com/title/tt0114709/" target="_blank" class="animacao">Animação: Toy Story</a>
       </a>
 
     </div>
@@ -48,6 +45,29 @@
       Alternar Tema </button>
 
   </div>
+  <!-- INTRO NETFLIX -->
+<div id="intro">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="logo-intro">
+  <audio id="tudum" src="https://www.myinstants.com/media/sounds/netflix-intro-sound.mp3"></audio>
+</div>
+
+<script>
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
+  const som = document.getElementById("tudum");
+
+  // tocar som (alguns navegadores precisam de interação)
+  setTimeout(() => {
+    som.play().catch(() => {});
+  }, 300);
+
+  // remover intro depois de 3s
+  setTimeout(() => {
+    intro.classList.add("sumir");
+    document.body.classList.add("filme-comecou");
+  }, 3000);
+});
+</script>
 
   <script src="script.js"></script>
 </body>

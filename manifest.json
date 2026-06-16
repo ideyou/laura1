@@ -1,5 +1,4 @@
 {
-  "type": "pinned",
   "id": "Movie Hub",
   "name": "CineGêneros da Laura",
   "short_name": "Laura",
@@ -7,7 +6,7 @@
   "start_url": "./",
   "display": "standalone",
   "theme_color": "#FFFFFF",
-  "background_color": "#d01412",
+  "background_color": "#E50914",
   "icons": [
     {
       "src": "profile.avif",

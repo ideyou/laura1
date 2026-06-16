@@ -37,7 +37,7 @@ body::before {
 
 /* quando o filme começa */
 body.filme-comecou::before {
-  opacity: 0.85; /* ajuste aqui */
+  opacity: 0.5; /* ajuste aqui */
 }
 
 
@@ -65,13 +65,13 @@ body.filme-comecou::before {
 
 /* Título */
 .title {
-  color: #e50914;
+  color: #ff000d;
   font-size: 30px;
 }
 
 /* Subtítulo */
 .subtitle {
-  color: #ccc;
+  color: #ffffff;
 }
 
 /* Links */
@@ -91,76 +91,153 @@ body.filme-comecou::before {
   display: block;
 }
 
-/* Gêneros (modo escuro) */
-.btn-action {
-  background: #e50914;
+/* ===== BOTÕES ESTILO NETFLIX ===== */
+a {
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
   color: white;
+  text-decoration: none;
+
+  background-size: 200% 200%;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-comedy {
-  background: #f5c518;
-  color: #111;
+.acao {
+  background:#2B0000 ;
 }
 
-.btn-horror {
-  background: #111;
-  color: #ff4d4d;
+.comedia {
+  background: #5A0000;
 }
 
-.btn-romance {
-  background: #ff4f81;
+.terror {
+  background: #8B0000;
+}
+
+.romance {
+  background: #B20710;
+}
+
+.ficcao {
+  background: #E50914;
+}
+
+.animacao {
+  background:#FF2A2A;
+}
+
+
+.btn {
+  background-color: transparent;
   color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  transition: 0.3s;
 }
 
-.btn-scifi {
-  background: #6c63ff;
-  color: white;
-}
-
-.btn-animation {
-  background: #ff9800;
-  color: white;
-}
-
-/* Hover */
 .btn:hover {
-  transform: scale(1.05);
+  background-color: #B20710;
+  transform: scale(1.00);
 }
 
-/* Botão tema */
-.btn-outline {
-  margin-top: 15px;
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: rgb(255, 255, 255);
+
+/* HOVER (quando passa o mouse) */
+a:hover {
+  background-position: right center;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.7);
+  cursor: pointer;
 }
 
-.light-mode .subtitle {
-  color: #555;
+/* BRILHO PASSANDO */
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: 0.5s;
 }
 
-/* BOTÕES NO MODO CLARO */
-.light-mode .btn-action {
-  background: #ff6b6b;
+a:hover::before {
+  left: 100%;
 }
 
-.light-mode .btn-comedy {
-  background: #ffe066;
+/* EFEITO AO CLICAR */
+a:active {
+  transform: scale(0.97);
 }
 
-.light-mode .btn-horror {
-  background: #333;
-  color: #ff4d4d;
+body {
+  background-color: #141414;
+  position: relative;
+  overflow: hidden;
 }
 
-.light-mode .btn-romance {
-  background: #ff85a2;
+.netflix-logo {
+  animation: slideNetflix 2s ease forwards, fadeOut 1s ease 3s forwards;
 }
 
-.light-mode .btn-scifi {
-  background: #8e8dff;
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.2);
+  }
 }
 
-.light-mode .btn-animation {
-  background: #ffb74d;
+/* INTRO TELA PRETA */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* LOGO */
+.logo-intro {
+  width: 180px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: aparecerLogo 1.5s ease forwards;
+}
+
+/* ANIMAÇÃO DO LOGO */
+@keyframes aparecerLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* SUMIR COM A INTRO */
+.sumir {
+  animation: sumirIntro 1s ease forwards;
+}
+
+@keyframes sumirIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
